@@ -5,13 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements  AsyncResponse {
 
-    ChatRepository cr;
+    public static ChatRepository cr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final User user1 = new User("amro@abc.com", "amro", "last");
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements  AsyncResponse {
         cr.addChat(fromShaimaToAmro);
 
         Message m = new Message();
-        m.chat_id = fromShaimaToAmro.chat_id;
+        m.setChat_id(fromShaimaToAmro.chat_id);
         m.setText("Hellllllooooo amr");
         m.setDate(new Date());
 

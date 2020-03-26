@@ -2,15 +2,18 @@ package ch.epfl.sqltest;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.os.AsyncTask;
 
 import androidx.room.Room;
 
+import com.google.firebase.Timestamp;
+
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
+@SuppressLint("StaticFieldLeak")
 public class ChatRepository {
 
     private ChatDatabase chatDB;
@@ -28,11 +31,10 @@ public class ChatRepository {
         Message m = new Message();
         m.setText(content);
         m.setDate(new Date());
-        m.chat_id = chat_id;
+        m.setChat_id(chat_id);
         sendMessage(m);
     }
 
-    @SuppressLint("StaticFieldLeak")
     private void sendMessage(final Message message) {
         new AsyncTask<Void, Void, Void>() {
             @Override
@@ -43,7 +45,6 @@ public class ChatRepository {
         }.execute();
     }
 
-    @SuppressLint("StaticFieldLeak")
     public void addChat(final Chat c) {
         new AsyncTask<Void, Void, Void>() {
             @Override
@@ -54,7 +55,6 @@ public class ChatRepository {
         }.execute();
     }
 
-    @SuppressLint("StaticFieldLeak")
     public void addUser(final User usr) {
         new AsyncTask<Void, Void, Void>() {
             @Override
@@ -66,7 +66,6 @@ public class ChatRepository {
     }
 
 
-    @SuppressLint("StaticFieldLeak")
     public void getMessages(final String id_owner, final String id_rec) {
 
         new AsyncTask<Void, Void, List<String>>() {
@@ -87,10 +86,16 @@ public class ChatRepository {
             }
         }.execute();
 
-       // msgList.addAll(chatDB.daoAccess().getChatFromOwnerToReceiver(id_owner, id_rec));
-       // msgList.addAll(chatDB.daoAccess().getChatToOwnerFromSender(id_owner, id_rec));
-        //return msgList;//chatDB.daoAccess().getChatFromOwnerToReceiver(id_owner, id_rec).addAll(chatDB.daoAccess().getChatToOwnerFromSender(id_owner, id_rec));
     }
 
+    public void insertMessageFromRemote(final Map<String, Object> data) {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                chatDB.daoAccess().sendMessage(new Message(((Timestamp)data.get("date")).toDate(), data.get("text").toString()));
+                return null;
+            }
+        }.execute();
 
+    }
 }

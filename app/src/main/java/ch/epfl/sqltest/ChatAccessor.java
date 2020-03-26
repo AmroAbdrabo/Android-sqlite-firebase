@@ -3,6 +3,7 @@ package ch.epfl.sqltest;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Transaction;
 
 import java.util.Date;
 import java.util.List;
@@ -27,5 +28,10 @@ public interface ChatAccessor {
 
     @Insert
     public void addChat(Chat c);
+
+    @Transaction
+    @Query("SELECT * FROM user")
+    public List<UserWithFriends> getUserWithFriends();
+
 
 }
