@@ -1,5 +1,6 @@
 package ch.epfl.sqltest;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -9,6 +10,7 @@ import androidx.room.PrimaryKey;
 public class User {
     @PrimaryKey
     @ColumnInfo(name = "userID")
+    @NonNull
     public String email;
 
     public User(String email, String firstName, String lastName)

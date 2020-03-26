@@ -1,5 +1,7 @@
 package ch.epfl.sqltest;
 
+import android.content.Context;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -12,6 +14,9 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
+
+        //Context context = getApplicationContext();
+
         assertEquals(4, 2 + 2);
     }
 }
