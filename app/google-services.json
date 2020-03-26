@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "633290189206",
+    "firebase_url": "https://sqlitedemo-f8b75.firebaseio.com",
+    "project_id": "sqlitedemo-f8b75",
+    "storage_bucket": "sqlitedemo-f8b75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633290189206:android:03abd5329f0bb1db6a55b7",
+        "android_client_info": {
+          "package_name": "ch.epfl.sqltest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633290189206-69lbk798bmdbbf7cep9sjqspaonsde8m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ch.epfl.sqltest",
+            "certificate_hash": "d359b58ca12f4dd6f7fd3020a5d7d501fb9a989e"
+          }
+        },
+        {
+          "client_id": "633290189206-cfm87vng6r4q1p9pt3ipr77fhmfjviil.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBFIvuB4lkxuvfpBSNgyUfAuaHPHInEmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633290189206-cfm87vng6r4q1p9pt3ipr77fhmfjviil.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
