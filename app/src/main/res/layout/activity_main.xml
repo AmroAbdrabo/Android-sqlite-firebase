@@ -7,36 +7,38 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/button_send"
+        android:layout_width="232dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="488dp"
+        android:text="SEND message TO SHAIMA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="89dp" />
+
+    <EditText
+        android:id="@+id/editMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="121dp" />
+
+    <Button
         android:id="@+id/button_fetch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="126dp"
-        android:layout_marginBottom="31dp"
-        android:text="Fetch Messages Sent to Amro"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="FETCH SHAIMA MESSAGE"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="364dp" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="201dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="29dp"
+        android:layout_width="264dp"
+        android:layout_height="227dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/button_add"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_fetch" />
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="433dp" />
 
-    <Button
-        android:id="@+id/button_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="252dp"
-        android:text="add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

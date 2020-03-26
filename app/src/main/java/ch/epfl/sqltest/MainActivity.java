@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements  AsyncResponse {
     protected void onCreate(Bundle savedInstanceState) {
         final User user1 = new User("amro@abc.com", "amro", "last");
         final User user2 = new User("shaima@abc.com", "shaima", "rashed");
+
         cr = new ChatRepository(this);
 
         cr.addUser(user1);

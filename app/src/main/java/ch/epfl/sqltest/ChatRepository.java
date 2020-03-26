@@ -65,7 +65,27 @@ public class ChatRepository {
         }.execute();
     }
 
+    public void addFriend(final User user1, final User user2)
+    {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                chatDB.daoAccess().addFriendPair(new IsFriendsWith(user1.email, user2.email));
+                return null;
+            }
+        }.execute();
+    }
 
+    public void areFriends(final User user1, final User user2)
+    {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                chatDB.daoAccess().areFriends(user1.email, user2.email);
+                return null;
+            }
+        }.execute();
+    }
     public void getMessages(final String id_owner, final String id_rec) {
 
         new AsyncTask<Void, Void, List<String>>() {
