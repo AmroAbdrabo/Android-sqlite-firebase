@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements  AsyncResponse {
     public static ChatRepository cr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         a = findViewById(R.id.editMessage);
         b = findViewById(R.id.textView);
         final User user1 = new User("amro@abc.com", "amro", "last");
@@ -44,8 +46,7 @@ public class MainActivity extends AppCompatActivity implements  AsyncResponse {
 
         cr.sendMessage("Hellllooo amr", fromShaimaToAmro.chat_id);
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
         findViewById(R.id.button_fetch).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements  AsyncResponse {
         findViewById(R.id.button_send).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("HIII "+ a.getText() +" HELLO ");
                 cr.sendMessage(a.getText().toString(), fromShaimaToAmro.chat_id);
                 //cr.getMessages(user1.email, user2.email);
 
